@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Film Diary — A Dreamy Photo Gallery</title>
+  <meta name="description" content="A dreamy film diary: polaroid-style photos of nature, travel, cozy cafes and flowers." />
+
+  <!-- Google Fonts: Playfair Display (headings), DM Sans (body), Caveat (handwritten captions) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Grain overlay sits on top of everything for a film texture -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <p class="eyebrow">vol. 01 — collected moments</p>
+    <h1>The <em>Film</em> Diary</h1>
+    <p class="subtitle">Soft light, slow mornings, and places worth remembering.</p>
+
+    <!-- Category filter pills -->
+    <nav class="filters" aria-label="Filter photos by category">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="nature">Nature</button>
+      <button class="pill" data-filter="travel">Travel</button>
+      <button class="pill" data-filter="cozy">Cozy</button>
+      <button class="pill" data-filter="flowers">Flowers</button>
+    </nav>
+  </header>
+
+  <!-- ===== Gallery (items are injected by script.js) ===== -->
+  <main>
+    <section class="gallery" id="gallery" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">made with film &amp; feelings ✿</footer>
+
+  <!-- ===== Lightbox ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">&#8592;</button>
+
+    <figure class="lb-polaroid">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCaption"></figcaption>
+      <span class="lb-counter" id="lbCounter">1 / 12</span>
+    </figure>
+
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">&#8594;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
